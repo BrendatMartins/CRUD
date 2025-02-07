@@ -41,7 +41,6 @@ $result = mysqli_query($conn, "SELECT * FROM livros WHERE favorito = 1");
         const toggleButton = document.getElementById('toggleDarkMode');
         const body = document.body;
 
-        // Verifica se o modo escuro estava ativado anteriormente
         if (localStorage.getItem('darkMode') === 'enabled') {
             body.classList.add('dark-mode');
         }
@@ -49,7 +48,6 @@ $result = mysqli_query($conn, "SELECT * FROM livros WHERE favorito = 1");
         toggleButton.addEventListener('click', function () {
             body.classList.toggle('dark-mode');
 
-            // Salva a preferência no localStorage
             if (body.classList.contains('dark-mode')) {
                 localStorage.setItem('darkMode', 'enabled');
             } else {

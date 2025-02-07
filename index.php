@@ -29,7 +29,7 @@ $result = mysqli_query($conn, "SELECT * FROM livros");
             <th>Ano</th>
             <th>Status</th>
             <th>Ações</th>
-            <th>Favorito</th> <!-- Nova coluna -->
+            <th>Favorito</th>
         </tr>
         <?php while($livro = $result->fetch_assoc()): ?>
             <tr>
