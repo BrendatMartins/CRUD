@@ -1,26 +1,21 @@
 <?php
 include('config.php');
 
-// Recupera o ID do livro que será editado
 $id = $_GET['id'];
 $result = $conn->query("SELECT * FROM livros WHERE id = $id");
 $livro = $result->fetch_assoc();
 
-// Processa o envio do formulário
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $titulo = $_POST['titulo'];
     $autor = $_POST['autor'];
     $genero = $_POST['genero'];
     $ano = $_POST['ano_publicacao'];
     
-    // Verifica se o checkbox "status" está marcado e atribui o valor "Lido", caso contrário, "Não Lido"
     $status = isset($_POST['status']) && $_POST['status'] === 'on' ? 'Lido' : 'Não Lido';
 
-    // Atualiza os dados do livro no banco de dados
     $sql = "UPDATE livros SET titulo='$titulo', autor='$autor', genero='$genero', ano_publicacao='$ano', status='$status' WHERE id=$id";
     $conn->query($sql);
 
-    // Redireciona para a página de listagem após a atualização
     header('Location: index.php');
     exit();
 }
@@ -36,10 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body class="container mt-4">
 
-    <!-- Botão de retorno -->
     <a href="index.php" id="backButton" class="btn-back">←</a>
     
-    <!-- Toggle de modo escuro -->
     <button id="toggleDarkMode" class="btn btn-light">🌙</button>
 
     <div class="container">
@@ -75,11 +68,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
     </div>
     <script>
-        // Modo escuro
         const toggleButton = document.getElementById('toggleDarkMode');
         const body = document.body;
 
-        // Verifica se o modo escuro estava ativado anteriormente
         if (localStorage.getItem('darkMode') === 'enabled') {
             body.classList.add('dark-mode');
         }
@@ -87,7 +78,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         toggleButton.addEventListener('click', function () {
             body.classList.toggle('dark-mode');
 
-            // Salva a preferência no localStorage
             if (body.classList.contains('dark-mode')) {
                 localStorage.setItem('darkMode', 'enabled');
             } else {
@@ -104,10 +94,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 statusLabel.textContent = statusSwitch.checked ? 'Lido' : 'Não Lido';
             }
 
-            // Atualiza o texto ao carregar a página, caso o switch já esteja ativado
             atualizarLabel();
 
-            // Atualiza o texto ao alterar o switch
             statusSwitch.addEventListener('change', atualizarLabel);
         });
     </script>

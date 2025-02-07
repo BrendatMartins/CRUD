@@ -74,14 +74,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             const anoAtual = new Date().getFullYear(); // Obtém o ano atual
             let valido = true;
 
-            // Função para exibir erro no campo
             function mostrarErro(input, mensagem) {
                 input.setCustomValidity(mensagem);
                 input.reportValidity();
                 valido = false;
             }
 
-            // Resetando os erros anteriores
             titulo.setCustomValidity('');
             autor.setCustomValidity('');
             genero.setCustomValidity('');
@@ -105,7 +103,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         const toggleButton = document.getElementById('toggleDarkMode');
         const body = document.body;
 
-        // Verifica se o modo escuro estava ativado anteriormente
         if (localStorage.getItem('darkMode') === 'enabled') {
             body.classList.add('dark-mode');
         }
@@ -113,7 +110,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         toggleButton.addEventListener('click', function () {
             body.classList.toggle('dark-mode');
 
-            // Salva a preferência no localStorage
             if (body.classList.contains('dark-mode')) {
                 localStorage.setItem('darkMode', 'enabled');
             } else {
@@ -130,10 +126,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             statusLabel.textContent = statusSwitch.checked ? 'Lido' : 'Não Lido';
         }
 
-        // Atualiza o texto ao carregar a página, caso o switch já esteja ativado
         atualizarLabel();
 
-        // Atualiza o texto ao alterar o switch
         statusSwitch.addEventListener('change', atualizarLabel);
     });
     </script>

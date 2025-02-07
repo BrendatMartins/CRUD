@@ -46,7 +46,6 @@ $result = mysqli_query($conn, "SELECT * FROM livros");
                         </a>
                     </div>
                 </td>
-                <!-- Nova célula para o favorito -->
                 <td class="favorito-cell">
                     <button class="favorito-btn" 
                         data-id="<?= $livro['id'] ?>" 

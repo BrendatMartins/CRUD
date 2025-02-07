@@ -1,4 +1,4 @@
-/* Reset de estilos básicos */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,13 +6,11 @@
     font-family: Arial, sans-serif;
 }
 
-/* Estilo geral da página */
 body {
     background-color: #f4f4f4;
     padding: 20px;
 }
 
-/* Container central */
 .container {
     max-width: 1000px;
     margin: auto;
@@ -22,14 +20,12 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Títulos */
 h1, h2 {
     text-align: center;
     color: #333;
     margin-bottom: 20px;
 }
 
-/* Tabela */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -51,38 +47,34 @@ table td {
     padding: 12px;
     word-wrap: break-word;
     text-align: left;
-    max-width: 40px; /* Limita a largura das células */
-    overflow: hidden; /* Impede o conteúdo de ultrapassar a largura da célula */
-    text-overflow: ellipsis; /* Adiciona "..." se o texto for muito grande */
+    max-width: 40px; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
 }
 
 td {
-    min-height: 50px; /* Mantém a altura mínima */
+    min-height: 50px; 
 }
 
-/* Estilo das linhas */
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
 
-/* Cabeçalho da tabela */
 table th {
-    background-color: #d1b3ff; /* Roxo claro */
+    background-color: #d1b3ff; 
     color: #333;
 }
 
-/* Linhas da tabela ao passar o mouse */
 table tr:hover {
-    background-color: #f3e5ff; /* Roxo ainda mais claro */
+    background-color: #f3e5ff;
 }
 
-/* Botão "Adicionar nova série" */
 .add-series {
     display: block;
     width: fit-content;
     margin: 0 auto 20px;
     padding: 10px 15px;
-    background-color: #7a3dc2; /* Roxo mais forte */
+    background-color: #7a3dc2; 
     color: white;
     text-decoration: none;
     border-radius: 8px;
@@ -91,16 +83,14 @@ table tr:hover {
 }
 
 .add-series:hover {
-    background-color: #5e2f91; /* Roxo escuro */
+    background-color: #5e2f91; 
 }
 
-/* Botões de ação */
 .actions {
     display: flex;
     gap: 10px;
 }
 
-/* Estilo para o modo escuro */
 .dark-mode {
     background-color: #242323;
     color: #f1f1f1;
@@ -119,7 +109,7 @@ table tr:hover {
 }
 
 .dark-mode table th {
-    background-color: #774caf; /* Roxo escuro no modo escuro */
+    background-color: #774caf; 
     color: #f1f1f1;
 }
 
@@ -129,7 +119,6 @@ table tr:hover {
     border-bottom: 1px solid #444;
 }
 
-/* Estilização para os botões no modo escuro */
 .dark-mode .add-series {
     background-color: #9162cc;
 }
@@ -139,7 +128,7 @@ table tr:hover {
 }
 
 .dark-mode .actions .edit {
-    background-color: #34d058; /* Verde claro no modo escuro */
+    background-color: #34d058;
 }
 
 .dark-mode .actions .edit:hover {
@@ -147,19 +136,17 @@ table tr:hover {
 }
 
 .dark-mode .actions .delete {
-    background-color: #ff4c4c; /* Vermelho mais vibrante */
+    background-color: #ff4c4c; 
 }
 
 .dark-mode .actions .delete:hover {
     background-color: #cc0000;
 }
 
-/* Estilo para os títulos no modo escuro */
 .dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode h6 {
-    color: #ffffff; /* Cor branca para os títulos */
+    color: #ffffff; 
 }
 
-/* Estilo para o botão de modo escuro */
 #toggleDarkMode {
     position: fixed;
     top: 20px;
@@ -183,59 +170,57 @@ table tr:hover {
     background-color: #666;
 }
 
-/* Ajuste para inputs no modo escuro */
 .dark-mode input[type="text"],
 .dark-mode input[type="number"],
 .dark-mode input[type="email"],
 .dark-mode input[type="password"],
 .dark-mode textarea {
-    background-color: #2c2c2c; /* Fundo escuro */
-    color: #f1f1f1; /* Texto branco */
-    border: 1px solid #4d4d4d; /* Borda mais visível */
+    background-color: #2c2c2c;
+    color: #f1f1f1;
+    border: 1px solid #4d4d4d;
     padding: 8px;
     border-radius: 4px;
 }
 
 .dark-mode input::placeholder,
 .dark-mode textarea::placeholder {
-    color: #bbb; /* Cinza mais claro para o placeholder */
+    color: #bbb; 
 }
 
-/* Customização do switch no modo escuro */
 .dark-mode .form-switch .form-check-input {
-    background-color: #555; /* Fundo escuro quando desligado */
+    background-color: #555;
 }
 
 .dark-mode .form-switch .form-check-input::before {
-    background-color: #aaa; /* Cinza claro no botão do switch */
+    background-color: #aaa;
 }
 
 .dark-mode .form-switch .form-check-input:checked {
-    background-color: #7a3dc2; /* Roxo quando ativado */
+    background-color: #7a3dc2; 
 }
 
 .dark-mode .form-switch .form-check-input:checked::before {
-    background-color: #fff; /* Branco no botão quando ativado */
+    background-color: #fff; 
 }
 
 .btn-primary {
-    background-color: #7D3C98; /* Roxo mais forte */
+    background-color: #7D3C98;
     border-color: #6C3483;
     color: white;
     padding: 10px 15px;
-    border-radius: 8px; /* Bordas arredondadas */
+    border-radius: 8px; 
     font-weight: bold;
     transition: background 0.3s ease-in-out;
 }
 
 .btn-primary:hover {
-    background-color: #633974; /* Roxo um pouco mais escuro ao passar o mouse */
+    background-color: #633974;
     border-color: #5B2C6F;
 }
 
 .excluir-link {
     color: #ffffff; 
-    background-color: #da0e0e; /* lilás */
+    background-color: #da0e0e; 
     text-decoration: none;
     padding: 5px 10px;
     border-radius: 10px;
@@ -247,13 +232,13 @@ table tr:hover {
 }
 
 .excluir-link:hover {
-    background-color: #9209f3; /* lilás escuro ao passar o mouse */
+    background-color: #9209f3; 
     color: #ffffff;
 }
 
 .editar-link {
-    color: white; /* Cor do texto */
-    background-color: #90ee90; /* Verde claro */
+    color: white; 
+    background-color: #90ee90; 
     text-decoration: none;
     padding: 5px 13px;
     border-radius: 10px;
@@ -262,37 +247,36 @@ table tr:hover {
     align-items: center;
     display: inline-block;
     vertical-align: middle;
-    margin-bottom: 5px; /* Define um espaço entre os botões */
+    margin-bottom: 5px; 
 }
 
 .editar-link:hover {
-    background-color: #9209f3; /* Roxo */
-    color: white; /* Cor do texto ao passar o mouse */
+    background-color: #9209f3; 
+    color: white; 
 }
 
-/* Estilo para o botão "Voltar" */
 .btn-back {
     position: fixed;
     top: 20px;
     left: 20px;
     width: 40px;
     height: 40px;
-    background-color: #444; /* Roxo mais forte */
+    background-color: #444; 
     color: white;
     font-size: 24px;
-    border-radius: 50%; /* Faz o botão ser redondo */
+    border-radius: 50%; 
     text-align: center;
-    line-height: 35px; /* Alinha o texto verticalmente */
+    line-height: 35px; 
     text-decoration: none;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background 0.3s ease;
 }
 
 .btn-back:hover {
-    background-color: #5e2f91; /* Roxo escuro ao passar o mouse */
+    background-color: #5e2f91; 
 }
 
-/* Estilo do switch */
+
 .form-switch .form-check-input {
     width: 50px;
     height: 25px;
@@ -305,11 +289,11 @@ table tr:hover {
 }
 
 .form-switch .form-check-input:checked {
-    background-color: #7a3dc2; /* Roxo mais forte quando ativado */
+    background-color: #7a3dc2; 
 }
 
 .form-switch .form-check-input:checked::before {
-    left: 25px; /* Posiciona o círculo para o lado direito */
+    left: 25px; 
 }
 
 .form-switch .form-check-input::before {
@@ -331,27 +315,27 @@ table tr:hover {
 }
 
 .form-check-label {
-    margin-top: 5px; /* Ajuste fino */
+    margin-top: 5px; 
 }
 
-/* Remove as setinhas no Chrome, Safari e Edge */
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
-/* Remove as setinhas no Firefox */
+
 input[type="number"] {
-    -moz-appearance: textfield; /* Firefox */
-    -webkit-appearance: textfield; /* Chrome, Safari, Edge */
-    appearance: textfield; /* Padrão */
+    -moz-appearance: textfield; 
+    -webkit-appearance: textfield; 
+    appearance: textfield; 
 }
 
 .favorito-cell {
     text-align: center;
     vertical-align: middle;
-    width: 60px; /* Ajuste a largura conforme necessário */
+    width: 60px; 
 }
 
 .favorito-btn {
