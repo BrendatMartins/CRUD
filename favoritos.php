@@ -25,8 +25,6 @@ $result = mysqli_query($conn, "SELECT * FROM livros WHERE favorito = 1");
             <th>Gênero</th>
             <th>Ano</th>
             <th>Status</th>
-            <th>Ações</th>
-            <th>Favorito</th>
         </tr>
         <?php while($livro = $result->fetch_assoc()): ?>
             <tr>
@@ -35,45 +33,10 @@ $result = mysqli_query($conn, "SELECT * FROM livros WHERE favorito = 1");
                 <td><?= htmlspecialchars($livro['genero']) ?></td>
                 <td><?= $livro['ano_publicacao'] ?></td>
                 <td><?= $livro['status'] ?></td>
-                <td class="acoes-cell">
-                    <div class="acoes">
-                        <a href="edit.php?id=<?= $livro['id'] ?>" class="editar-link">Editar ✏️</a>
-                        <a href="delete.php?id=<?= $livro['id'] ?>" onclick="return confirm('Tem certeza que deseja excluir?')" class="excluir-link">
-                            Excluir 🗑️
-                        </a>
-                    </div>
-                </td>
-                <td class="favorito-cell">
-                    <button class="favorito-btn" 
-                        data-id="<?= $livro['id'] ?>" 
-                        data-favorito="<?= $livro['favorito'] ?>">
-                        <?= $livro['favorito'] ? '⭐' : '☆' ?>
-                    </button>
-                </td>
             </tr>
         <?php endwhile; ?>
     </table>
 
-    <script>
-        document.querySelectorAll('.favorito-btn').forEach(button => {
-            button.addEventListener('click', function () {
-                const livroId = this.getAttribute('data-id');
-
-                fetch('favorito.php', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: 'id=' + livroId
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        this.innerHTML = data.favorito ? '⭐' : '☆';
-                        location.reload(); // Atualiza a página para remover livros não favoritos
-                    }
-                });
-            });
-        });
-    </script>
     <script>
         const toggleButton = document.getElementById('toggleDarkMode');
         const body = document.body;
